@@ -24,9 +24,10 @@ function displayList() {
 
 //find the index of the element
 function findElementInList(elem) {
-	for (var i = 0; i < this.listData.length; i++) {
-		if (this.listData[i] == elem) {
-			return i;
+	for (var index = 0; index < this.listData.length; index++) {
+		if (this.listData[index] == elem) {
+			console.log('Element present at index ' + index);
+			return index;
 		}
 	}
 	return -1;
@@ -45,7 +46,7 @@ function insertIntoList(elem, insertAfter) {
 		this.listSize++;
 		return true;
 	}
-	return false;
+	return 'Wrong InsertAfter Element';
 }
 
 //find whether the list contains the element
@@ -66,7 +67,7 @@ function removeFromList(elem) {
 			this.listSize--;
 			return true;
 		}
-	return false;
+	return 'Element not present';
 }
 
 //clear the whole list
